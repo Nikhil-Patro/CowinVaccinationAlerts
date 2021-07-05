@@ -53,4 +53,3 @@ if __name__ == "__main__":
     schedule.every(3600).seconds.do(lambda: (fetch_data_for_district(district_ids)))
 while True:
     schedule.run_pending()
-    time.sleep(1)
