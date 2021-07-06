@@ -38,7 +38,6 @@ def extract_data(response):
                 session["vaccine"], session["min_age_limit"], center["fee_type"], session["available_capacity_dose1"]
                 , session["available_capacity_dose2"])
         if(message[-1]=='\n' and message[-2]=='\n' ):
-            prev_message = message
             send_message_telegram(message)
             count = count + 1
             time.sleep(4)
@@ -47,9 +46,8 @@ def send_message_telegram(message):
     final_telegram_url = telegram_api_url + message
     final_telegram_url +="&parse_mode=markdown"
     response = requests.get(final_telegram_url)
-    print(response)
 
 if __name__ == "__main__":
-    schedule.every(3600).seconds.do(lambda: (fetch_data_for_district(district_ids)))
+    schedule.every(1).seconds.do(lambda: (fetch_data_for_district(district_ids)))
 while True:
     schedule.run_pending()
