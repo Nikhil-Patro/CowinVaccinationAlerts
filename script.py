@@ -48,6 +48,6 @@ def send_message_telegram(message):
     response = requests.get(final_telegram_url)
 
 if __name__ == "__main__":
-    schedule.every(1).seconds.do(lambda: (fetch_data_for_district(district_ids)))
+    schedule.every(3600).seconds.do(lambda: (fetch_data_for_district(district_ids)))
 while True:
     schedule.run_pending()
