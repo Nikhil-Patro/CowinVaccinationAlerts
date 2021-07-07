@@ -15,7 +15,7 @@ telegram_api_url = "https://api.telegram.org/bot"+API_TOKEN+"/sendMessage?chat_i
 base_cowin_url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict"
 now = datetime.now()
 today_date = now.strftime("%d-%m-%Y")
-#Ernakulam = 307, Khurda = 446
+#Ernakulam = 307
 district_ids = [307]
 
 def fetch_data_for_district(district_ids):
